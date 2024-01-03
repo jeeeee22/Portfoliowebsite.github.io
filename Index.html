@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta charset="UTF-8">
+  <title>Computer Engineer - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="Logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="animation.css">
+    <div class="container">
+    <div class="logo">
+      <img src="Logo.png" alt="Logo" class="logo-image">
+    </div>
+  <style>
+    /* Additional styles */
+    .welcome-message {
+      text-align: center;
+      font-size: 4em;
+      margin-top: 40vh;
+    }
+
+    footer {
+      background: #4682B4;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+  </style>
+</header>
+<body>
+  <header>
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="experience.html">Work Experience</a></li>
+          <li><a href="technical_support.html">Technical Support</a></li>
+          <li><a href="software_developer.html">Frontend Developer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="welcome-message">
+        <div id="welcome-text">
+          <p>Welcome to My Portfolio!</p>
+        </div>
+        <div id="profession-text" style="display: none;">
+          <p>I am Computer Engineer</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2023 Jerome Dela Cruz - <span id="profession">Computer Engineer</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const welcomeText = document.getElementById('welcome-text');
+      const professionText = document.getElementById('profession-text');
+      const professionSpan = document.getElementById('profession');
+
+      const professions = ['Computer Engineer', 'Technical Support', 'Computer Engineer','Frontend Developer'];
+      let index = 0;
+
+      setInterval(() => {
+        if (index === 0) {
+          welcomeText.style.display = 'block';
+          professionText.style.display = 'none';
+        } else {
+          welcomeText.style.display = 'none';
+          professionText.style.display = 'block';
+          professionText.innerHTML = `<p>I am ${professions[index]}</p>`;
+          professionSpan.textContent = professions[index];
+        }
+
+        index = (index + 1) % professions.length;
+      }, 3000); // Change text every 3 seconds (3000 milliseconds)
+    });
+  </script>
+</body>
+</html>
